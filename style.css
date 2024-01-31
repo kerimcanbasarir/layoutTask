@@ -1,0 +1,119 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+header, main, .logo, .title, .box, footer {
+
+    background-color: rgb(201, 201, 201);
+    padding: 20px;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight : 600;
+    font-family: "Inter", sans-serif;
+    text-transform: uppercase;
+    font-size: 12px;
+}
+
+.container {
+    display: grid;
+    height: 100vh;
+    gap: 15px;
+    
+    grid-template-columns: repeat(3, 1fr);
+    
+    /* grid-template-rows:  50px 300px 200px 250px 50px; */
+    grid-template-rows:   minmax(50px, auto) 
+        minmax(300px, auto) 
+        minmax(200px, auto) 
+        minmax(350px, auto)
+        minmax(50px, auto);
+
+
+    grid-template-areas:
+
+        "logo header header"
+        "banner banner banner"
+        "title-1 title-2 title-3"
+        "box-1 box-1 box-2"
+
+        "footer footer footer";
+    
+
+}
+
+header{
+
+    grid-area: header;
+}
+
+.logo {
+
+    grid-area: logo;
+
+}
+
+
+main {
+
+    grid-area: banner;
+
+}
+
+
+.title-1 {
+
+    grid-area: title-1;
+
+}
+
+.title-2 {
+
+    grid-area: title-2;
+
+}
+
+.title-3 {
+
+    grid-area: title-3;
+
+}
+
+.box-1 {
+
+    grid-area: box-1;
+
+}
+
+.box-2 {
+
+    grid-area: box-2;
+    
+}
+
+footer {
+
+    grid-area: footer;
+
+
+}
+
+@media only screen and (max-width: 768px) {
+
+    .container {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 40px 150px 1fr 1fr 1fr 150px 1fr 40px;
+        grid-template-areas:
+
+            "logo header"
+            "banner banner"
+            "title-1 title-1"
+            "title-2 title-2"
+            "title-3 title-3"
+            "box-2 box-2 "
+            "box-1 box-1"
+            "footer footer"
+
+    }
+}
